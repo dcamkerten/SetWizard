@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\..\..\..\..\Program Files %28x86%29\TRICENTIS\Tosca Testsuite\ToscaCommander\Addins\</OutputPath>
+    <OutputPath>$(TRICENTIS_HOME)\ToscaCommander\Addins\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -61,12 +61,12 @@
     <Reference Include="System.Xml" />
     <Reference Include="TCAddOn, Version=9.0.0.22463, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\TRICENTIS\Tosca Testsuite\ToscaCommander\Addins\TCAddOn.dll</HintPath>
+      <HintPath>$(TRICENTIS_HOME)\ToscaCommander\Addins\TCAddOn.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="TCAPIObjects, Version=9.0.0.22463, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\TRICENTIS\Tosca Testsuite\ToscaCommander\TCAPIObjects.dll</HintPath>
+      <HintPath>$(TRICENTIS_HOME)\ToscaCommander\TCAPIObjects.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="WindowsBase" />
