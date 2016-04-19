@@ -23,12 +23,26 @@
         </Grid>
         <Grid Grid.Row="0" Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
             <StackPanel>
-                <ComboBox x:Name="Enviroment" Height="25px" Width="90px" FontFamily="Segoe UI" FontSize="14">
+                <ComboBox  x:Name="Enviroment" Height="25px" Width="150" FontFamily="Segoe UI" FontSize="14" ToolTip="test">
                     <ComboBoxItem VerticalAlignment="Center">Desktop</ComboBoxItem>
                     <ComboBoxItem VerticalAlignment="Center">Mobile</ComboBoxItem>
                 </ComboBox>
+
             </StackPanel>
         </Grid>
+
+        <Grid Grid.Row="1" Column="0" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <TextBlock TextAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI Semibold" FontSize="14">Directory</TextBlock>
+        </Grid>
+        <Grid Grid.Row="1" Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <StackPanel>
+
+                <TextBox GotFocus="TextBox_GotFocus" Width="150" Height="25" />
+            </StackPanel>
+        </Grid>
+
+
+
 
     </Grid>
 </UserControl>
