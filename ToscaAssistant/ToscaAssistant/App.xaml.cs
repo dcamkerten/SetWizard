@@ -13,5 +13,10 @@ namespace ToscaAssistant
     /// </summary>
     public partial class App : Application
     {
+        //public AssistantMain AssistantMain { get; }
+        //public App(AssistantMain assistantMain)
+        //{
+        //    AssistantMain = assistantMain;
+        //}
     }
 }

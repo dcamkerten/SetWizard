@@ -19,8 +19,7 @@ namespace ToscaAssistantAddIn.Tasks
         //    }
         //}
 
-        public static bool IsPossibleForObject(PersistableObject obj)
-        {
+        public static bool IsPossibleForObject(PersistableObject obj) {
             TestStepFolder teststepFolder = obj as TestStepFolder;
             if (teststepFolder != null) return true;
             return false;
@@ -35,6 +34,7 @@ namespace ToscaAssistantAddIn.Tasks
 
         protected override void RunInMainThread()
         {
+            AssistantMain assistantMain = new AssistantMain();
             //Open Assistant Window (in another thread?)
             var newWindowThread = new Thread(() =>
             {
