@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                 x:Class="ToscaAssistant.Pages.Windows.Operations.TakeScreenshot"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
@@ -13,28 +14,31 @@
             <ColumnDefinition Width="15*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30px" />
+            <RowDefinition Height="50px" />
+            <RowDefinition Height="50px" />
+            <RowDefinition Height="50px" />
+            <RowDefinition Height="50px" />
             <RowDefinition Height="50px" />
             <RowDefinition Height="50px" />
         </Grid.RowDefinitions>
-        
-        <Grid Grid.Row="0" Column="0" VerticalAlignment="Center" HorizontalAlignment="Left">
-            <TextBlock TextAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI Semibold" FontSize="14">Enviroment</TextBlock>
+
+        <Grid Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <TextBlock TextAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI Semibold" FontSize="14"><Run Text="Enviroment"/></TextBlock>
         </Grid>
-        <Grid Grid.Row="0" Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
+        <Grid Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
             <StackPanel>
                 <ComboBox  x:Name="Enviroment" Height="25px" Width="150" FontFamily="Segoe UI" FontSize="14" ToolTip="test">
-                    <ComboBoxItem VerticalAlignment="Center">Desktop</ComboBoxItem>
-                    <ComboBoxItem VerticalAlignment="Center">Mobile</ComboBoxItem>
+                    <ComboBoxItem VerticalAlignment="Center" Content="Desktop"/>
+                    <ComboBoxItem VerticalAlignment="Center" Content="Mobile"/>
                 </ComboBox>
 
             </StackPanel>
         </Grid>
 
-        <Grid Grid.Row="1" Column="0" VerticalAlignment="Center" HorizontalAlignment="Left">
-            <TextBlock TextAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI Semibold" FontSize="14">Directory</TextBlock>
+        <Grid Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <TextBlock TextAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI Semibold" FontSize="14"><Run Text="Directory"/></TextBlock>
         </Grid>
-        <Grid Grid.Row="1" Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
+        <Grid Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
             <StackPanel>
 
                 <TextBox GotFocus="TextBox_GotFocus" Width="150" Height="25" />
@@ -42,7 +46,40 @@
         </Grid>
 
 
+        <Grid Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <TextBlock TextAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI Semibold" FontSize="14"><Run Text="Filename"/></TextBlock>
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <StackPanel>
 
+                <TextBox Width="150" Height="25" />
+            </StackPanel>
+        </Grid>
+
+
+        <Grid Grid.Row="5" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel>
+
+                <controls:SplitButton HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center"
+                                      Width="70" SelectedIndex="0" ItemsSource="{Binding ActionModes}" VerticalAlignment="Center" FontSize="14" FontFamily="Segoe UI Semibold" Height="25" BorderThickness="1" >
+                    <controls:SplitButton.Foreground>
+                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
+                    </controls:SplitButton.Foreground>
+                    <controls:SplitButton.ArrowBrush>
+                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
+                    </controls:SplitButton.ArrowBrush>
+
+
+                    <controls:SplitButton.BorderBrush>
+                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
+                    </controls:SplitButton.BorderBrush>
+                    
+                </controls:SplitButton>
+
+            </StackPanel>
+        </Grid>
+        
+       
 
     </Grid>
 </UserControl>
