@@ -13,8 +13,8 @@ namespace ToscaAssistantAddOn.Tasks
     {
         public override TCObject Execute(TCObject objectToExecuteOn, TCAddOnTaskContext taskContext)
         {
-            IToscaFunctions toscaFunctions = new ToscaFunctions(objectToExecuteOn);
-            AssistantMain assistant = new AssistantMain(toscaFunctions);
+            ITestDataHandler testDataHandler = new TestDataHandler.ToscaTestDataHandler(objectToExecuteOn);
+            AssistantMain assistant = new AssistantMain(testDataHandler);
             assistant.StartMainWindow();
             return null;
         }

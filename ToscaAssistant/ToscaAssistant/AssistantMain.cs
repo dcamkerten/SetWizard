@@ -30,17 +30,17 @@ namespace ToscaAssistant
 
     public class AssistantMain
     {
-        public AssistantMain(IToscaFunctions toscaFunctions)
+        public AssistantMain(ITestDataHandler testDataHandler)
         {
-            ToscaFunctions = toscaFunctions;
+            TestDataHandler = testDataHandler;
         }
 
         ~AssistantMain()
         {
-            ToscaFunctions = null;
+            TestDataHandler = null;
         }
 
-        public static IToscaFunctions ToscaFunctions { get; private set; }
+        public ITestDataHandler TestDataHandler { get; private set; }
 
         //void Start()
         //{
@@ -52,10 +52,10 @@ namespace ToscaAssistant
         public void StartMainWindow()
         {
             //Open Assistant Window(in another thread ?)
-            var newWindowThread = new Thread(() =>
+            Thread newWindowThread = new Thread(() =>
             {
-                var assistantWindow = new App();
-
+                App assistantWindow = new App(this);
+                
                 assistantWindow.Run();
                 //MainWindow assistantWindow = new ToscaAssistant.MainWindow();
             });

@@ -5,13 +5,13 @@ using Tricentis.TCAPIObjects.Objects;
 
 //using Tricentis.TCAPIObjects.Objects;
 
-namespace ToscaAssistantAddOn
+namespace ToscaAssistantAddOn.TestDataHandler
 {
-    internal class ToscaFunctions : IToscaFunctions
+    internal class ToscaTestDataHandler : ITestDataHandler
     {
         private readonly TCObject parentObject;
 
-        internal ToscaFunctions(TCObject parentObject)
+        internal ToscaTestDataHandler(TCObject parentObject)
         {
             this.parentObject = parentObject;
         }
@@ -65,7 +65,7 @@ namespace ToscaAssistantAddOn
 
             testStepValues.Add("Value", new TestStepValueData("Value", "testvalue", TestStepValueData.ActionModes.Input));
             testStepValues.Add("Value", new TestStepValueData("BufferName", "blabla", TestStepValueData.ActionModes.Buffer));
-            AssistantMain.ToscaFunctions.CreateTestStepFromSET(setName, testStepValues);
+            App.AssistantMain.TestDataHandler.CreateTestStepFromSET(setName, testStepValues);
         }
 
         public static void CreateTestStep(IEnumerable<KeyValuePair<string, TestStepValueData>> teststepvalues)

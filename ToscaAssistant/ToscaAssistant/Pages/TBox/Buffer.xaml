@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="ToscaAssistant.Pages.TBox.Buffer"
+﻿<UserControl x:Class="ToscaAssistant.Pages.SubPages.Buffer"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -13,7 +13,7 @@
                 <!-- TODO: set @Source -->
                 <mui:Link DisplayName="Name to Buffer" />
                 <mui:Link DisplayName="Delete Buffer" />
-                <mui:Link DisplayName="Set Buffer" />
+                <mui:Link DisplayName="Set Buffer" Source="/Pages/TBox/Buffer/SetBuffer.xaml"  />
                 <mui:Link DisplayName="Partial Buffer" />
             </mui:ModernTab.Links>
         </mui:ModernTab>

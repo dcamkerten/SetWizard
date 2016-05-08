@@ -59,7 +59,7 @@
     <Compile Include="AssistantAddOn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tasks\AssistantTask.cs" />
-    <Compile Include="ToscaFunctions.cs" />
+    <Compile Include="TestDataHandler\ToscaTestDataHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ToscaAssistant.Pages.TBox
+namespace ToscaAssistant.Pages.SubPages
 {
     /// <summary>
     /// Interaction logic for Buffer.xaml

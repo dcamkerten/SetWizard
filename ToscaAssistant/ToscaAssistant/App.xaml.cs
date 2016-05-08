@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using ToscaAssistant.TestDataHandler;
 
 namespace ToscaAssistant
 {
@@ -13,10 +14,16 @@ namespace ToscaAssistant
     /// </summary>
     public partial class App : Application
     {
-        //public AssistantMain AssistantMain { get; }
-        //public App(AssistantMain assistantMain)
-        //{
-        //    AssistantMain = assistantMain;
-        //}
+        private static AssistantMain assistantMain = new AssistantMain(new StandAloneTestDataHandler());
+
+        public static AssistantMain AssistantMain
+        {
+            get { return assistantMain; }
+        }
+
+        public App(AssistantMain assistant):base()
+        {
+            assistantMain = assistant;
+        }
     }
 }

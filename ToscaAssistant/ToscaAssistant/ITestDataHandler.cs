@@ -2,7 +2,7 @@
 
 namespace ToscaAssistant
 {
-    public interface IToscaFunctions
+    public interface ITestDataHandler
     {
         void CreateTestStepFromSET(string setName, Dictionary<string, TestStepValueData> testStepValues);
     }
