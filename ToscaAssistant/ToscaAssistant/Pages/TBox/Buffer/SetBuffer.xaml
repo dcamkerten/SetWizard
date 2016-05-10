@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="ToscaAssistant.Pages.TBox.Buffer.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ToscaAssistant.Pages.TBox.Buffer"
+             xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="12*" />
+            <ColumnDefinition Width="40*" />
+            <ColumnDefinition Width="15*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50px" />
+            <RowDefinition Height="50px" />
+            <RowDefinition Height="50px" />
+            <RowDefinition Height="50px" />
+            <RowDefinition Height="50px" />
+            <RowDefinition Height="50px" />
+            <RowDefinition Height="50px" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <TextBlock TextAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI Semibold" FontSize="14" >
+                <Run Text="Buffer name"/>
+            </TextBlock>
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <StackPanel>
+                <TextBox x:Name="BufferName" Width="150" Height="25" />
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <TextBlock TextAlignment="Center" FontWeight="Bold" FontFamily="Segoe UI Semibold" FontSize="14">
+                <Run Text="Value"/>
+            </TextBlock>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <StackPanel>
+                <TextBox x:Name="BufferValue" Width="150" Height="25" />
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="5" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel>
+
+                <controls:SplitButton HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center"
+                                      Width="70" SelectedIndex="0" ItemsSource="{Binding ActionModes}" VerticalAlignment="Center" FontSize="14" FontFamily="Segoe UI Semibold" Height="25" BorderThickness="1" >
+                    <controls:SplitButton.Foreground>
+                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
+                    </controls:SplitButton.Foreground>
+                    <controls:SplitButton.ArrowBrush>
+                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
+                    </controls:SplitButton.ArrowBrush>
+                    <controls:SplitButton.BorderBrush>
+                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
+                    </controls:SplitButton.BorderBrush>
+                </controls:SplitButton>
+            </StackPanel>
+        </Grid>
+        
+        <Button Grid.Row="6" Grid.Column="2" Content="OK" Click="ButtonBase_OnClick"></Button>
+
+
+
+    </Grid>
+</UserControl>
