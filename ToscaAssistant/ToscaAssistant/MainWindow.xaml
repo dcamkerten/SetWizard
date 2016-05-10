@@ -41,6 +41,13 @@
         </mui:LinkGroup>
 
 
+        <mui:LinkGroup DisplayName="Scraper">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="Scraper" Source="/Pages/Scrapper/scrapperList.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+
+        
     </mui:ModernWindow.MenuLinkGroups>
 
     <mui:ModernWindow.TitleLinks>

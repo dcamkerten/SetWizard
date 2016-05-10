@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="ToscaAssistant.Pages.success"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid Style="{StaticResource ContentRoot}">
+
+        <Label>
+            <TextBlock VerticalAlignment="Center" FontSize="13" FontWeight="Bold" Width="274">Your Teststep has been created successfully<LineBreak/><LineBreak/>Do you want to create another one ?</TextBlock>
+        </Label>
+
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Margin="179,128,19,100">
+            <StackPanel>
+                <Button BorderBrush="DarkGray" BorderThickness="1px" Content="Restart" Width="70" Style="{DynamicResource SquareButtonStyle}"/>
+            </StackPanel>
+        </Grid>
+
+
+    </Grid>
+</UserControl>

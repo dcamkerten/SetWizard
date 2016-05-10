@@ -43,9 +43,5 @@ namespace ToscaAssistant.Pages.Windows.Operations
             }
         }
 
-        private void SplitButton_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
     }
 }

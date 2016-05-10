@@ -13,17 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ToscaAssistant.Pages.TBox
+namespace ToscaAssistant.Pages
 {
     /// <summary>
-    /// Interaction logic for UserControl1.xaml
+    /// Interaction logic for success.xaml
     /// </summary>
-    public partial class Buffer : UserControl
+    public partial class successScrapper : UserControl
     {
-        public Buffer()
+        public successScrapper()
         {
             InitializeComponent();
         }
-
     }
 }

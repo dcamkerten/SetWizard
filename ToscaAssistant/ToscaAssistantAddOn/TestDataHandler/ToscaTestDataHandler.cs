@@ -1,79 +1,79 @@
-﻿using System;
-using System.Collections.Generic;
-using ToscaAssistant;
-using Tricentis.TCAPIObjects.Objects;
-
+﻿//using System;
+//using System.Collections.Generic;
+//using ToscaAssistant;
 //using Tricentis.TCAPIObjects.Objects;
 
-namespace ToscaAssistantAddOn.TestDataHandler
-{
-    internal class ToscaTestDataHandler : ITestDataHandler
-    {
-        private readonly TCObject parentObject;
+////using Tricentis.TCAPIObjects.Objects;
 
-        internal ToscaTestDataHandler(TCObject parentObject)
-        {
-            this.parentObject = parentObject;
-        }
+//namespace ToscaAssistantAddOn.TestDataHandler
+//{
+//    internal class ToscaTestDataHandler : ITestDataHandler
+//    {
+//        private readonly TCObject parentObject;
 
-        public void CreateTestStepFromSET(string setName, Dictionary<string, TestStepValueData> testStepValues)
-        {
-            TestStepFolder testStepFolder = parentObject as TestStepFolder;
-            if (testStepFolder == null) throw new NullReferenceException("CurrentFolder is not set");
+//        internal ToscaTestDataHandler(TCObject parentObject)
+//        {
+//            this.parentObject = parentObject;
+//        }
 
-            string query = "->PROJECT->AllOwnedSubItems=>SUBPARTS:XModule[SetWizard ==\"" + setName + "\"]";
-            TCObject tcObject = testStepFolder.Search(query)[0];
-            XModule xModule = tcObject as XModule;
+//        public void CreateTestStepFromSET(string setName, Dictionary<string, TestStepValueData> testStepValues)
+//        {
+//            TestStepFolder testStepFolder = parentObject as TestStepFolder;
+//            if (testStepFolder == null) throw new NullReferenceException("CurrentFolder is not set");
 
-            if (xModule == null) return;
-            XTestStep testStep = testStepFolder.CreateXTestStepFromXModule(xModule);
+//            string query = "->PROJECT->AllOwnedSubItems=>SUBPARTS:XModule[SetWizard ==\"" + setName + "\"]";
+//            TCObject tcObject = testStepFolder.Search(query)[0];
+//            XModule xModule = tcObject as XModule;
 
-            foreach (KeyValuePair<string, TestStepValueData> testStepValuePair in testStepValues)
-            {
-                foreach (XModuleAttribute xModuleAttribute in xModule.Attributes)
-                {
-                    if (xModuleAttribute.Name != testStepValuePair.Key) continue;
-                    XTestStepValue testStepValue = testStep.CreateXTestStepValue(xModuleAttribute);
-                    TestStepValueData testStepValueData = testStepValuePair.Value;
+//            if (xModule == null) return;
+//            XTestStep testStep = testStepFolder.CreateXTestStepFromXModule(xModule);
 
-                    testStepValue.Value = testStepValueData.Value;
+//            foreach (KeyValuePair<string, TestStepValueData> testStepValuePair in testStepValues)
+//            {
+//                foreach (XModuleAttribute xModuleAttribute in xModule.Attributes)
+//                {
+//                    if (xModuleAttribute.Name != testStepValuePair.Key) continue;
+//                    XTestStepValue testStepValue = testStep.CreateXTestStepValue(xModuleAttribute);
+//                    TestStepValueData testStepValueData = testStepValuePair.Value;
 
-                    testStepValue.ActionMode = ConvertActionMode(testStepValueData.ActionMode);
-                }
-            }
-        }
+//                    testStepValue.Value = testStepValueData.Value;
 
-        private XTestStepActionMode ConvertActionMode(TestStepValueData.ActionModes actionMode)
-        {
-            switch (actionMode)
-            {
-                case TestStepValueData.ActionModes.Input:
-                    return XTestStepActionMode.Input;
-                case TestStepValueData.ActionModes.Verify:
-                    return XTestStepActionMode.Verify;
-                case TestStepValueData.ActionModes.Buffer:
-                    return XTestStepActionMode.Buffer;
-                default:
-                    throw new NotSupportedException("Actionmode not supported: " + actionMode);
-            }
-        }
+//                    testStepValue.ActionMode = ConvertActionMode(testStepValueData.ActionMode);
+//                }
+//            }
+//        }
 
-        public static void CreateTestStepFromSETTest(string setName, Dictionary<string, TestStepValueData> testStepValues)
-        {
-            setName = "TBoxClipboard";
-            testStepValues = new Dictionary<string, TestStepValueData>();
+//        private XTestStepActionMode ConvertActionMode(TestStepValueData.ActionModes actionMode)
+//        {
+//            switch (actionMode)
+//            {
+//                case TestStepValueData.ActionModes.Input:
+//                    return XTestStepActionMode.Input;
+//                case TestStepValueData.ActionModes.Verify:
+//                    return XTestStepActionMode.Verify;
+//                case TestStepValueData.ActionModes.Buffer:
+//                    return XTestStepActionMode.Buffer;
+//                default:
+//                    throw new NotSupportedException("Actionmode not supported: " + actionMode);
+//            }
+//        }
 
-            testStepValues.Add("Value", new TestStepValueData("Value", "testvalue", TestStepValueData.ActionModes.Input));
-            testStepValues.Add("Value", new TestStepValueData("BufferName", "blabla", TestStepValueData.ActionModes.Buffer));
-            App.AssistantMain.TestDataHandler.CreateTestStepFromSET(setName, testStepValues);
-        }
+//        public static void CreateTestStepFromSETTest(string setName, Dictionary<string, TestStepValueData> testStepValues)
+//        {
+//            setName = "TBoxClipboard";
+//            testStepValues = new Dictionary<string, TestStepValueData>();
 
-        public static void CreateTestStep(IEnumerable<KeyValuePair<string, TestStepValueData>> teststepvalues)
-        {
-            foreach (var testStepValue in teststepvalues)
-            {
-                var moduleName = testStepValue.Key;
-            }
-        }
-    }
-}
+//            testStepValues.Add("Value", new TestStepValueData("Value", "testvalue", TestStepValueData.ActionModes.Input));
+//            testStepValues.Add("Value", new TestStepValueData("BufferName", "blabla", TestStepValueData.ActionModes.Buffer));
+//            App.AssistantMain.TestDataHandler.CreateTestStepFromSET(setName, testStepValues);
+//        }
+
+//        public static void CreateTestStep(IEnumerable<KeyValuePair<string, TestStepValueData>> teststepvalues)
+//        {
+//            foreach (var testStepValue in teststepvalues)
+//            {
+//                var moduleName = testStepValue.Key;
+//            }
+//        }
+//    }
+//}

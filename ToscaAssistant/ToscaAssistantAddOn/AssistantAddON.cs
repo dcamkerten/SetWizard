@@ -9,7 +9,7 @@ namespace ToscaAssistantAddOn
 {
     public class AssistantAddOn : TCAddOn
     {
-        public override string UniqueName => "AssistantAddOn";
+        public override string UniqueName => "Tosca Assistant";
 
 
     }

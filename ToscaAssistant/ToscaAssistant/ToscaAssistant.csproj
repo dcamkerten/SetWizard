@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\debug\</OutputPath>
+    <OutputPath>..\..\..\..\..\..\..\Temp\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -73,7 +73,6 @@
       <HintPath>..\packages\Infragistics.Themes.Office2010Blue.Wpf.1.0.0\lib\net40\System.Windows.Controls.Layout.Toolkit.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.1.2.4.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
       <Private>True</Private>
@@ -88,7 +87,6 @@
     </Reference>
     <Reference Include="TCAPIObjects">
       <HintPath>$(TRICENTIS_HOME)\ToscaCommander\TCAPIObjects.dll</HintPath>
-      <Private>False</Private>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationFramework" />
@@ -130,8 +128,21 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ITestDataHandler.cs" />
-    <Compile Include="TestDataHandler\StandAloneTestDataHandler.cs" />
+    <Compile Include="IToscaFunctions.cs" />
+    <Compile Include="Pages\successScrapper.xaml.cs">
+      <DependentUpon>successScrapper.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\success.xaml.cs">
+      <DependentUpon>success.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TBox\functions\setBuffer.xaml.cs">
+      <DependentUpon>setBuffer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -141,10 +152,24 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\Scrapper\Scrapper.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Scrapper\scrapperList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Settings\About.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Compile Include="Pages\Scrapper\Scrapper.xaml.cs">
+      <DependentUpon>Scrapper.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Scrapper\scrapperList.xaml.cs">
+      <DependentUpon>scrapperList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Settings\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
@@ -165,9 +190,6 @@
     </Compile>
     <Compile Include="Pages\TBox\Buffer.xaml.cs">
       <DependentUpon>Buffer.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\TBox\Buffer\SetBuffer.xaml.cs">
-      <DependentUpon>SetBuffer.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\TBox\Database.xaml.cs">
       <DependentUpon>Database.xaml</DependentUpon>
@@ -193,6 +215,9 @@
     <Compile Include="Pages\Windows\Operations.xaml.cs">
       <DependentUpon>Operations.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Windows\Operations\createfile.xaml.cs">
+      <DependentUpon>createfile.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Windows\Operations\TakeScreenshot.xaml.cs">
       <DependentUpon>TakeScreenshot.xaml</DependentUpon>
     </Compile>
@@ -200,15 +225,23 @@
       <DependentUpon>Programs.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Page Include="Pages\successScrapper.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\success.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\TBox\Buffer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\TBox\Buffer\SetBuffer.xaml">
+    <Page Include="Pages\TBox\Database.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\TBox\Database.xaml">
+    <Page Include="Pages\TBox\functions\setBuffer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -237,6 +270,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Windows\Operations.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Windows\Operations\createfile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -274,8 +311,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="images\questionmark.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Include="Resources\questionmark.png" />
     <Content Include="Themes\Office2010Blue\HowToApplyTheme.txt" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
