@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToscaAssistant", "ToscaAssistant\ToscaAssistant.csproj", "{B1BB87DE-443E-4C80-8F7E-6EA4F2E8DEBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToscaAssistantAddOn", "ToscaAssistantAddOn\ToscaAssistantAddOn.csproj", "{FFB0AB02-60B2-42EC-928A-9B15C0F9ABBB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1BB87DE-443E-4C80-8F7E-6EA4F2E8DEBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1BB87DE-443E-4C80-8F7E-6EA4F2E8DEBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1BB87DE-443E-4C80-8F7E-6EA4F2E8DEBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1BB87DE-443E-4C80-8F7E-6EA4F2E8DEBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFB0AB02-60B2-42EC-928A-9B15C0F9ABBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFB0AB02-60B2-42EC-928A-9B15C0F9ABBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFB0AB02-60B2-42EC-928A-9B15C0F9ABBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFB0AB02-60B2-42EC-928A-9B15C0F9ABBB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
