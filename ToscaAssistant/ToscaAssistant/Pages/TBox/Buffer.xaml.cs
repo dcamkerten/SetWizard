@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace ToscaAssistant.Pages.TBox
 {
     /// <summary>
-    /// Interaction logic for UserControl1.xaml
+    /// Interaction logic for Buffer.xaml
     /// </summary>
     public partial class Buffer : UserControl
     {
@@ -24,6 +24,5 @@ namespace ToscaAssistant.Pages.TBox
         {
             InitializeComponent();
         }
-
     }
 }

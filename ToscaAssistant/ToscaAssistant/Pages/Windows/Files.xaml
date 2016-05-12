@@ -7,14 +7,19 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid Style="{StaticResource ContentRoot}">
-        <mui:ModernTab Layout="List" SelectedSource="/Pages/Windows/Operations/createfile.xaml">
+        <!-- TODO: set @SelectedSource -->
+        <mui:ModernTab Layout="List">
             <mui:ModernTab.Links>
-                <mui:Link DisplayName="Create File" Source="/Pages/Windows/Operations/createfile.xaml"/>
-                <mui:Link DisplayName="Open File" />
-                <mui:Link DisplayName="Delete File" />
-                <mui:Link DisplayName="Copy File" />
+                <!-- TODO: set @Source -->
+                <mui:Link DisplayName="Image Compare" />
                 <mui:Link DisplayName="File Existence" />
                 <mui:Link DisplayName="File Compare" />
+                <mui:Link DisplayName="Delete File" />
+                <mui:Link DisplayName="Copy File" />
+                <mui:Link DisplayName="Save Content to File" />
+                <mui:Link DisplayName="Open File Resource" />
+                <mui:Link DisplayName="Save File Resource" />
+                <mui:Link DisplayName="Open File" />
             </mui:ModernTab.Links>
         </mui:ModernTab>
     </Grid>
