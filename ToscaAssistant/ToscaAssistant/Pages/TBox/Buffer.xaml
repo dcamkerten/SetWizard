@@ -7,13 +7,11 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid Style="{StaticResource ContentRoot}">
-        <!-- TODO: set @SelectedSource -->
-        <mui:ModernTab Layout="List">
+        <mui:ModernTab Layout="List" SelectedSource="/Pages/TBox/functions/setBuffer.xaml">
             <mui:ModernTab.Links>
-                <!-- TODO: set @Source -->
                 <mui:Link DisplayName="Name to Buffer" />
                 <mui:Link DisplayName="Delete Buffer" />
-                <mui:Link DisplayName="Set Buffer" />
+                <mui:Link DisplayName="Set Buffer" Source="/Pages/TBox/functions/setBuffer.xaml"/>
                 <mui:Link DisplayName="Partial Buffer" />
             </mui:ModernTab.Links>
         </mui:ModernTab>
